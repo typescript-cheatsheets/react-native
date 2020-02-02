@@ -1,6 +1,6 @@
 # react-native-typescript-cheatsheet
 
-This project aims to accumulate TypeScript advice for React Native users, in the same nature as https://github.com/typescript-cheatsheets/react-typescript-cheatsheet/. This is a new project and **we are actively seeking maintainers**. 
+This project aims to accumulate TypeScript advice for React Native users, in the same nature as https://github.com/typescript-cheatsheets/react-typescript-cheatsheet/. This is a new project and **we are actively seeking maintainers**.
 
 The goal is to **open source knowledge**:
 
@@ -16,4 +16,3 @@ An example list of sections:
 - Most commonly used RN APIs with their TS types
 - Tips and tricks with RN Core's typings
 - Tips and tricks with RN Community typings
-
