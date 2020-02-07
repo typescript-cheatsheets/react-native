@@ -1,5 +1,9 @@
 # react-native-typescript-cheatsheet
 
+This project aims to accumulate TypeScript advice for React Native users, in the same nature as https://github.com/typescript-cheatsheets/react-typescript-cheatsheet/. It serves as a community maintained supplement to [the official RN + TS docs](https://facebook.github.io/react-native/docs/typescript).
+
+This is a new project and [**we are actively seeking maintainers**](https://github.com/typescript-cheatsheets/react-native-typescript-cheatsheet/issues/1).
+
 ## Getting Started
 
 The best way to start is with Expo:
@@ -272,8 +276,6 @@ export default class FetchExample extends React.Component<{}, State> {
 ```
 
 ## Contributing
-
-This project aims to accumulate TypeScript advice for React Native users, in the same nature as https://github.com/typescript-cheatsheets/react-typescript-cheatsheet/. This is a new project and [**we are actively seeking maintainers**](https://github.com/typescript-cheatsheets/react-native-typescript-cheatsheet/issues/1).
 
 The goal is to **open source knowledge**:
 
