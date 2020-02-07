@@ -27,6 +27,9 @@ This should install the correct TypeScript dev dependencies to get you started:
 
 This translates [the RN docs](https://facebook.github.io/react-native/docs/getting-started) into TypeScript:
 
+---
+
+
 ### Props
 
 https://facebook.github.io/react-native/docs/props
@@ -66,6 +69,9 @@ export default class LotsOfGreetings extends Component {
   }
 }
 ```
+
+---
+
 
 ### State
 
@@ -136,6 +142,8 @@ export default class BlinkApp extends Component {
 }
 ```
 
+---
+
 ### Style, Height and Width, Flexbox
 
 https://facebook.github.io/react-native/docs/style
@@ -146,7 +154,11 @@ https://facebook.github.io/react-native/docs/flexbox
 
 Nothing TS Specific.
 
+---
+
 ### Handling Text Input
+
+https://facebook.github.io/react-native/docs/handling-text-input
 
 ```ts
 import React, { Component } from "react";
@@ -178,6 +190,11 @@ export default class PizzaTranslator extends Component<{}, { text: string }> {
   }
 }
 ```
+
+### Handling Touches
+
+https://facebook.github.io/react-native/docs/handling-touches
+
 
 ## Contributing
 
