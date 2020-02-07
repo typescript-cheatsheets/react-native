@@ -1,5 +1,30 @@
 # react-native-typescript-cheatsheet
 
+## Getting Started
+
+The best way to start is with Expo:
+
+```bash
+npm install -g expo-cli
+expo init AwesomeProject
+# you can pick from the typescript templates in the Managed or Bare workflows. If in doubt, use Managed
+```
+
+This should install the correct TypeScript dev dependencies to get you started:
+
+```js
+  "devDependencies": {
+    "@types/react": "~16.9.0",
+    "@types/react-native": "~0.60.23",
+    "@babel/core": "^7.0.0",
+    "babel-preset-expo": "~8.0.0",
+    "typescript": "~3.6.3"
+  },
+```
+
+
+## Contributors
+
 This project aims to accumulate TypeScript advice for React Native users, in the same nature as https://github.com/typescript-cheatsheets/react-typescript-cheatsheet/. This is a new project and [**we are actively seeking maintainers**](https://github.com/typescript-cheatsheets/react-native-typescript-cheatsheet/issues/1).
 
 The goal is to **open source knowledge**:
