@@ -29,7 +29,6 @@ This translates [the RN docs](https://facebook.github.io/react-native/docs/getti
 
 ---
 
-
 ### Props
 
 https://facebook.github.io/react-native/docs/props
@@ -71,7 +70,6 @@ export default class LotsOfGreetings extends Component {
 ```
 
 ---
-
 
 ### State
 
@@ -194,7 +192,6 @@ export default class PizzaTranslator extends Component<{}, { text: string }> {
 ### Handling Touches
 
 https://facebook.github.io/react-native/docs/handling-touches
-
 
 ## Contributing
 
