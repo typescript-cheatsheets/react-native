@@ -7,7 +7,8 @@ The best way to start is with Expo:
 ```bash
 npm install -g expo-cli
 expo init AwesomeProject
-# you can pick from the typescript templates in the Managed or Bare workflows. If in doubt, use Managed
+# you can pick from the typescript templates in the Managed or Bare workflows. 
+# If in doubt, use Managed
 ```
 
 This should install the correct TypeScript dev dependencies to get you started:
@@ -22,7 +23,119 @@ This should install the correct TypeScript dev dependencies to get you started:
   },
 ```
 
-## Contributors
+## TypeScriptified Tutorial
+
+This translates [the RN docs](https://facebook.github.io/react-native/docs/getting-started) into TypeScript:
+
+### Props
+
+```js
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+
+class Greeting extends Component<{name: string}> {
+  render() {
+    return (
+      <View style={{ alignItems: 'center' }}>
+        <Text>Hello {this.props.name}!</Text>
+      </View>
+    );
+  }
+}
+
+// // Function Component version
+// function Greeting(props: {name: string}) {
+//   return (
+//     <View style={{ alignItems: 'center' }}>
+//       <Text>Hello {props.name}!</Text>
+//     </View>
+//   );
+// }
+
+export default class LotsOfGreetings extends Component {
+  render() {
+    return (
+      <View style={{ alignItems: 'center', top: 50 }}>
+        <Greeting name='Rexxar' />
+        <Greeting name='Jaina' />
+        <Greeting name='Valeera' />
+      </View>
+    );
+  }
+}
+```
+
+### State
+
+```js
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+
+type BlinkProps = {
+  text: string
+}
+type BlinkState = {
+  isShowingText: boolean
+}
+class Blink extends Component<BlinkProps, BlinkState> {
+
+  componentDidMount() {
+    // Toggle the state every second
+    setInterval(() => (
+      this.setState(previousState => (
+        { isShowingText: !previousState.isShowingText }
+      ))
+    ), 1000);
+  }
+
+  //state object
+  state = { isShowingText: true };
+
+  render() {
+    if (!this.state.isShowingText) {
+      return null;
+    }
+
+    return (
+      <Text>{this.props.text}</Text>
+    );
+  }
+}
+
+
+// // hooks equivalent
+// function Blink(props: BlinkProps) {
+//   const [isShowingText, setIsShowingText] = React.useState(true) // state's type is inferred to be boolean
+//   // with other types it is helpful to explicitly specify the state's type
+//   // const [isShowingText, setIsShowingText] = React.useState<BlinkState>({ isShowingText: true})
+//   React.useEffect(() => {
+//     let interval = setInterval(() => (
+//       setIsShowingText(previousState => !previousState)
+//     ), 1000);
+//     return () => clearInterval(interval) // class component forgot to cleanup the interval
+//   })
+//   if (isShowingText) return null
+//   return (
+//     <Text>{props.text}</Text>
+//   );
+// }
+
+
+export default class BlinkApp extends Component {
+  render() {
+    return (
+      <View>
+        <Blink text='I love to blink' />
+        <Blink text='Yes blinking is so great' />
+        <Blink text='Why did they ever take this out of HTML' />
+        <Blink text='Look at me look at me look at me' />
+      </View>
+    );
+  }
+}
+```
+
+## Contributing
 
 This project aims to accumulate TypeScript advice for React Native users, in the same nature as https://github.com/typescript-cheatsheets/react-typescript-cheatsheet/. This is a new project and [**we are actively seeking maintainers**](https://github.com/typescript-cheatsheets/react-native-typescript-cheatsheet/issues/1).
 
