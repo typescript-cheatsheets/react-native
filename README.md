@@ -22,7 +22,6 @@ This should install the correct TypeScript dev dependencies to get you started:
   },
 ```
 
-
 ## Contributors
 
 This project aims to accumulate TypeScript advice for React Native users, in the same nature as https://github.com/typescript-cheatsheets/react-typescript-cheatsheet/. This is a new project and [**we are actively seeking maintainers**](https://github.com/typescript-cheatsheets/react-native-typescript-cheatsheet/issues/1).
