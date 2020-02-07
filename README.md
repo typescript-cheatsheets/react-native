@@ -29,7 +29,9 @@ This translates [the RN docs](https://facebook.github.io/react-native/docs/getti
 
 ### Props
 
-```js
+https://facebook.github.io/react-native/docs/props
+
+```ts
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
@@ -67,7 +69,9 @@ export default class LotsOfGreetings extends Component {
 
 ### State
 
-```js
+https://facebook.github.io/react-native/docs/state
+
+```ts
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
@@ -129,6 +133,46 @@ export default class BlinkApp extends Component {
         <Blink text='Yes blinking is so great' />
         <Blink text='Why did they ever take this out of HTML' />
         <Blink text='Look at me look at me look at me' />
+      </View>
+    );
+  }
+}
+```
+
+### Style, Height and Width, Flexbox
+
+https://facebook.github.io/react-native/docs/style
+
+https://facebook.github.io/react-native/docs/height-and-width
+
+https://facebook.github.io/react-native/docs/flexbox
+
+Nothing TS Specific.
+
+### Handling Text Input
+
+```ts
+import React, { Component } from 'react';
+import { Text, TextInput, View } from 'react-native';
+
+export default class PizzaTranslator extends Component<{}, {text: string}> {
+  constructor(props) {
+    super(props);
+    this.state = { text: '' };
+  }
+
+  render() {
+    return (
+      <View style={{ padding: 10 }}>
+        <TextInput
+          style={{ height: 40 }}
+          placeholder="Type here to translate!"
+          onChangeText={(text) => this.setState({ text })}
+          value={this.state.text}
+        />
+        <Text style={{ padding: 10, fontSize: 42 }}>
+          {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
+        </Text>
       </View>
     );
   }
