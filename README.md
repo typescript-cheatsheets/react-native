@@ -7,7 +7,7 @@ The best way to start is with Expo:
 ```bash
 npm install -g expo-cli
 expo init AwesomeProject
-# you can pick from the typescript templates in the Managed or Bare workflows. 
+# you can pick from the typescript templates in the Managed or Bare workflows.
 # If in doubt, use Managed
 ```
 
@@ -32,13 +32,13 @@ This translates [the RN docs](https://facebook.github.io/react-native/docs/getti
 https://facebook.github.io/react-native/docs/props
 
 ```ts
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import React, { Component } from "react";
+import { Text, View } from "react-native";
 
-class Greeting extends Component<{name: string}> {
+class Greeting extends Component<{ name: string }> {
   render() {
     return (
-      <View style={{ alignItems: 'center' }}>
+      <View style={{ alignItems: "center" }}>
         <Text>Hello {this.props.name}!</Text>
       </View>
     );
@@ -57,10 +57,10 @@ class Greeting extends Component<{name: string}> {
 export default class LotsOfGreetings extends Component {
   render() {
     return (
-      <View style={{ alignItems: 'center', top: 50 }}>
-        <Greeting name='Rexxar' />
-        <Greeting name='Jaina' />
-        <Greeting name='Valeera' />
+      <View style={{ alignItems: "center", top: 50 }}>
+        <Greeting name="Rexxar" />
+        <Greeting name="Jaina" />
+        <Greeting name="Valeera" />
       </View>
     );
   }
@@ -72,24 +72,25 @@ export default class LotsOfGreetings extends Component {
 https://facebook.github.io/react-native/docs/state
 
 ```ts
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import React, { Component } from "react";
+import { Text, View } from "react-native";
 
 type BlinkProps = {
-  text: string
-}
+  text: string;
+};
 type BlinkState = {
-  isShowingText: boolean
-}
+  isShowingText: boolean;
+};
 class Blink extends Component<BlinkProps, BlinkState> {
-
   componentDidMount() {
     // Toggle the state every second
-    setInterval(() => (
-      this.setState(previousState => (
-        { isShowingText: !previousState.isShowingText }
-      ))
-    ), 1000);
+    setInterval(
+      () =>
+        this.setState(previousState => ({
+          isShowingText: !previousState.isShowingText
+        })),
+      1000
+    );
   }
 
   //state object
@@ -100,12 +101,9 @@ class Blink extends Component<BlinkProps, BlinkState> {
       return null;
     }
 
-    return (
-      <Text>{this.props.text}</Text>
-    );
+    return <Text>{this.props.text}</Text>;
   }
 }
-
 
 // // hooks equivalent
 // function Blink(props: BlinkProps) {
@@ -124,15 +122,14 @@ class Blink extends Component<BlinkProps, BlinkState> {
 //   );
 // }
 
-
 export default class BlinkApp extends Component {
   render() {
     return (
       <View>
-        <Blink text='I love to blink' />
-        <Blink text='Yes blinking is so great' />
-        <Blink text='Why did they ever take this out of HTML' />
-        <Blink text='Look at me look at me look at me' />
+        <Blink text="I love to blink" />
+        <Blink text="Yes blinking is so great" />
+        <Blink text="Why did they ever take this out of HTML" />
+        <Blink text="Look at me look at me look at me" />
       </View>
     );
   }
@@ -152,13 +149,13 @@ Nothing TS Specific.
 ### Handling Text Input
 
 ```ts
-import React, { Component } from 'react';
-import { Text, TextInput, View } from 'react-native';
+import React, { Component } from "react";
+import { Text, TextInput, View } from "react-native";
 
-export default class PizzaTranslator extends Component<{}, {text: string}> {
+export default class PizzaTranslator extends Component<{}, { text: string }> {
   constructor(props) {
     super(props);
-    this.state = { text: '' };
+    this.state = { text: "" };
   }
 
   render() {
@@ -167,11 +164,14 @@ export default class PizzaTranslator extends Component<{}, {text: string}> {
         <TextInput
           style={{ height: 40 }}
           placeholder="Type here to translate!"
-          onChangeText={(text) => this.setState({ text })}
+          onChangeText={text => this.setState({ text })}
           value={this.state.text}
         />
         <Text style={{ padding: 10, fontSize: 42 }}>
-          {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
+          {this.state.text
+            .split(" ")
+            .map(word => word && "🍕")
+            .join(" ")}
         </Text>
       </View>
     );
