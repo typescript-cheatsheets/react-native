@@ -10,6 +10,9 @@ The best way to start is with Expo:
 
 ```bash
 npm install -g expo-cli
+# or
+yarn global add expo-cli
+
 expo init AwesomeProject
 # you can pick from the typescript templates in the Managed or Bare workflows.
 # If in doubt, use Managed
